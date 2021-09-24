@@ -19,9 +19,7 @@ To run the app after importing, just type the file name.`);
         return;
 	}
     le._apps[argv[0]] = {
-        exec: async function() {
-      		eval(await localforage.getItem(`desktop/${argv[0]}`));
-    	},
+        exec: eval(await localforage.getItem(`desktop/${argv[0]}`)),
 		terminal: true,
 		cli: true
     }
